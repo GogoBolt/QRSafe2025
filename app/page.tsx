@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Card } from "@/components/ui/card";
 import { Utensils } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 import {
   Accordion,
@@ -36,7 +37,17 @@ const MapWithNoSSR = dynamic(() => import("@/components/map"), {
   ssr: false,
 });
 
-const FeatureCard = ({ icon: Icon, title, description, className = "" }) => (
+const FeatureCard = ({
+  icon: Icon,
+  title,
+  description,
+  className = "",
+}: {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  className?: string;
+}) => (
   <motion.div
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
@@ -396,7 +407,7 @@ export default function Home() {
             <div className="flex items-center gap-4">
               <ThemeToggle />
               <p className="text-sm text-muted-foreground">
-                © 2024 SchoolSoft by Gogo. Tous droits réservés.
+                2024 SchoolSoft by Gogo. Tous droits réservés.
               </p>
             </div>
           </div>

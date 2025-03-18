@@ -91,7 +91,7 @@ export default function RegisterPage() {
   };
 
   // Fonction de réinitialisation des utilisateurs
-  const resetAndInsertUsers = async () => {
+ /*  const resetAndInsertUsers = async () => {
     try {
       // Supprimer tous les utilisateurs existants
       await db.delete().from(users);
@@ -128,7 +128,7 @@ export default function RegisterPage() {
       console.error("Erreur lors de la réinitialisation des utilisateurs :", error);
       toast.error("Une erreur est survenue lors de la réinitialisation.");
     }
-  };
+  }; */
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary flex items-center justify-center p-4">
@@ -273,21 +273,6 @@ export default function RegisterPage() {
         </Card>
       </motion.div>
 
-      {/* Bouton caché pour réinitialiser les utilisateurs */}
-      <Button 
-        id="resetALL" 
-        style={{ display: 'none' }} 
-        onClick={resetAndInsertUsers}
-      >
-        Reset All
-      </Button>
-
-      {/* Un bouton visible qui déclenche le clic sur le bouton caché */}
-      <button 
-        onClick={() => document.getElementById('resetALL').click()}
-      >
-        Réinitialiser
-      </button>
 
     </div>
   );
