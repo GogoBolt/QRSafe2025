@@ -30,6 +30,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Search, QrCode, MoreVertical, FileEdit, Trash2 } from "lucide-react";
+import Link from "next/link";
 
 // Demo data
 const students = [
@@ -76,10 +77,12 @@ export default function StudentsPage() {
       <Card className="p-6">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Gestion des Élèves</h1>
-          <Button>
-            <QrCode className="mr-2 h-4 w-4" />
-            Générer QR Code
-          </Button>
+          <Link href="/qr-code">
+            <Button>
+              <QrCode className="mr-2 h-4 w-4" />
+              Générer QR Code
+            </Button>
+          </Link>
         </div>
 
         <div className="relative mb-6">

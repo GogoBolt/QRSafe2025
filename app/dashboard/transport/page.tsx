@@ -10,6 +10,7 @@ import {
   AlertCircle,
   Plus,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function TransportPage() {
   const buses = [
@@ -52,10 +53,12 @@ export default function TransportPage() {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold">Gestion du Transport</h1>
-        <Button>
-          <Plus className="h-4 w-4 mr-2" />
-          Ajouter un Bus
-        </Button>
+        <Link href="/bus">
+          <Button>
+            <Plus className="h-4 w-4 mr-2" />
+            Ajouter un Bus
+          </Button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">

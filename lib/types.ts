@@ -36,6 +36,34 @@ export interface ChatResponse {
   loading?: boolean;
 }
 
+export interface Student {
+  id: string;
+  firstName: string;
+  lastName: string;
+  matricule: string;
+  class: string;
+  schoolYear: string;
+}
+
+export interface Bus {
+  id: string;
+  busNumber: string;
+  licensePlate: string; // Immatriculation
+  model: string;
+  color: string;
+  year: number;
+  capacity: number;
+  driver?: {
+    id: string;
+    name: string;
+    phone: string;
+  };
+  route?: {
+    id: string;
+    name: string;
+  };
+}
+
 export const ROLES = [
   { value: 'admin', label: 'Administrateur' },
   { value: 'teacher', label: 'Enseignant' },
@@ -43,6 +71,21 @@ export const ROLES = [
   { value: 'parent', label: 'Parent' },
   { value: 'driver', label: 'Chauffeur' },
   { value: 'cook', label: 'Cuisinier' },
+] as const;
+
+export const SCHOOL_YEARS = [
+  { value: '2023-2024', label: '2023-2024' },
+  { value: '2024-2025', label: '2024-2025' },
+  { value: '2025-2026', label: '2025-2026' },
+] as const;
+
+export const CLASSES = [
+  { value: 'CP1', label: 'CP1' },
+  { value: 'CP2', label: 'CP2' },
+  { value: 'CE1', label: 'CE1' },
+  { value: 'CE2', label: 'CE2' },
+  { value: 'CM1', label: 'CM1' },
+  { value: 'CM2', label: 'CM2' },
 ] as const;
 
 export const ROLE_PERMISSIONS = {
